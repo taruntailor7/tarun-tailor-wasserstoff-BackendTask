@@ -40,7 +40,7 @@ const login = async (req, res) => {
             return res.status(401).send({ message: 'Password is incorrect' }); // Send error message if password is incorrect
         }
         // Generate a JWT token with user ID and role as payload, signed with the secret key, expiring in 1 hour
-        const token = jwt.sign({ userId: user._id, role: user.role }, config.jwtSecret, { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user._id, role: user.role }, config.jwtSecret, { expiresIn: '24h' });
         // Send success response with token
         res.status(200).send({ message: 'Login successful', token });
     } catch (error) {
