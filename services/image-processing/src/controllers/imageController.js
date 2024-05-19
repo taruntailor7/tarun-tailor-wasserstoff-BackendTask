@@ -1,3 +1,5 @@
+// For storing in local /upload folder
+
 // const sharp = require('sharp');
 // const crypto = require('crypto');
 // const cloudinary = require('cloudinary').v2;
@@ -29,7 +31,8 @@
 
 // module.exports = { processImage };
 
-// src/controllers/imageController.js
+// For storing in Cloudinary
+
 const sharp = require('sharp');
 const crypto = require('crypto');
 const cloudinary = require('cloudinary').v2;

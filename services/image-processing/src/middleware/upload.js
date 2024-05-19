@@ -1,6 +1,9 @@
 const multer = require('multer');
 
 const storage = multer.memoryStorage();
+
+// For storing in local /upload folder
+
 // const storage = multer.diskStorage({
 //     destination: (req, file, cb) => {
 //         cb(null, 'uploads/'); // Save uploaded images to the 'uploads' directory
