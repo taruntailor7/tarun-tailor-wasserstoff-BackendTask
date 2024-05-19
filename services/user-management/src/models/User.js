@@ -3,9 +3,20 @@ const bcrypt = require('bcryptjs'); // Import bcrypt for hashing passwords
 
 // Define the schema for the User model
 const userSchema = new mongoose.Schema({
-    username: { type: String, required: true, unique: true }, // Username field (required and unique)
-    password: { type: String, required: true }, // Password field (required)
-    role: { type: String, enum: ['user', 'admin'], default: 'user' } // Role field (either 'user' or 'admin', default is 'user')
+    username: { 
+        type: String, 
+        required: true, 
+        unique: true 
+    }, // Username field (required and unique)
+    password: { 
+        type: String, 
+        required: true 
+    }, // Password field (required)
+    role: { 
+        type: String, 
+        enum: ['user', 'admin'], 
+        default: 'user' 
+    } // Role field (either 'user' or 'admin', default is 'user')
 });
 
 // Pre-save hook to hash the password before saving the user document

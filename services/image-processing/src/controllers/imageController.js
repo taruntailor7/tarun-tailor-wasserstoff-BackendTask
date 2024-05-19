@@ -64,7 +64,7 @@ const processImage = async (req, res) => {
         // Upload the processed image buffer to Cloudinary
         const uploadResult = await new Promise((resolve, reject) => {
             const uploadStream = cloudinary.uploader.upload_stream(
-                { folder: 'processed', public_id: `processed-${uniquePrefix}`, format: 'png' },
+                { folder: 'processed', public_id: `${uniquePrefix}`, format: 'png' },
                 (error, result) => {
                     if (error) {
                         return reject(error);
