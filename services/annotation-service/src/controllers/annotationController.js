@@ -3,6 +3,7 @@ const Annotation = require('../models/annotation');
 
 // Import the annotateImage function from externalAPI utility
 const { annotateImage } = require('../utils/externalAPI');
+const { analyzeImage } = require('../utils/cloudVision');
 
 // Import the configured Cloudinary instance
 const cloudinary = require('../config/cloudinary');
@@ -15,7 +16,8 @@ const annotateImageController = async (req, res) => {
      
     try {
         // Call the annotateImage function to get annotations for the image
-        const annotations = await annotateImage(imageUrl);
+        // const annotations = await annotateImage(imageUrl);
+        const annotations = await analyzeImage(imageUrl);
 
         // Create a new instance of Annotation model with imageUrl and annotations
         const annotation = new Annotation({
